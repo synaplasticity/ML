@@ -1,0 +1,434 @@
+O>> a = [1 2;3 4;5 6]
+a =
+
+   1   2
+   3   4
+   5   6
+
+O>> size(A)
+error: 'A' undefined near line 1 column 6
+O>> size(a))
+parse error:
+
+  syntax error
+
+>>> size(a))
+           ^
+
+O>> size(a)
+ans =
+
+   3   2
+
+O>> A = [1 2;3 4;5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> size(A) % 3 x 2
+ans =
+
+   3   2
+
+O>> size(A, 1) % first dimension of matrix A
+ans =  3
+O>> size(A, 2) % second dimension of matrix A
+ans =  2
+O>> length(A) % The longer dimension is display (3). Typically good for vectors
+ans =  3
+O>> V = [1 2 3 4]
+V =
+
+   1   2   3   4
+
+O>> length(V)
+ans =  4
+O>> who % shows the current vars in memory
+Variables in the current scope:
+
+A    V    a    ans
+
+O>> pwd
+ans = /Users/vinod/programming/ML/Octave
+O>> cd ..
+O>> cd 'ML course/Week 2/machine-learning-ex1/ex1
+parse error:
+
+  syntax error
+
+>>> cd 'ML course/Week 2/machine-learning-ex1/ex1
+                                                ^
+
+O>> cd 'ML course/Week 2/machine-learning-ex1/ex1'
+O>> ls
+computeCost.m		ex1data2.txt		normalEqn.m
+computeCostMulti.m	featureNormalize.m	plotData.m
+ex1.m			gradientDescent.m	submit.m
+ex1_multi.m		gradientDescentMulti.m	warmUpExercise.m
+ex1data1.txt		lib
+O>> load('ex1data.txt')
+error: load: unable to find file ex1data.txt
+O>> load('ex1data1.txt')
+O>> who
+Variables in the current scope:
+
+A         V         a         ans       ex1data1
+
+O>> ex1data1
+ex1data1 =
+
+    6.11010   17.59200
+    5.52770    9.13020
+    8.51860   13.66200
+    7.00320   11.85400
+    5.85980    6.82330
+    8.38290   11.88600
+    7.47640    4.34830
+    8.57810   12.00000
+    6.48620    6.59870
+    5.05460    3.81660
+    5.71070    3.25220
+   14.16400   15.50500
+    5.73400    3.15510
+    8.40840    7.22580
+    5.64070    0.71618
+    5.37940    3.51290
+    6.36540    5.30480
+    5.13010    0.56077
+    6.42960    3.65180
+    7.07080    5.38930
+    6.18910    3.13860
+   20.27000   21.76700
+    5.49010    4.26300
+    6.32610    5.18750
+    5.56490    3.08250
+   18.94500   22.63800
+   12.82800   13.50100
+   10.95700    7.04670
+   13.17600   14.69200
+   22.20300   24.14700
+    5.25240   -1.22000
+    6.58940    5.99660
+    9.24820   12.13400
+    5.89180    1.84950
+    8.21110    6.54260
+    7.93340    4.56230
+    8.09590    4.11640
+    5.60630    3.39280
+   12.83600   10.11700
+    6.35340    5.49740
+    5.40690    0.55657
+    6.88250    3.91150
+   11.70800    5.38540
+    5.77370    2.44060
+    7.82470    6.73180
+    7.09310    1.04630
+    5.07020    5.13370
+    5.80140    1.84400
+   11.70000    8.00430
+    5.54160    1.01790
+    7.54020    6.75040
+    5.30770    1.83960
+    7.42390    4.28850
+    7.60310    4.99810
+    6.33280    1.42330
+    6.35890   -1.42110
+    6.27420    2.47560
+    5.63970    4.60420
+    9.31020    3.96240
+    9.45360    5.41410
+    8.82540    5.16940
+    5.17930   -0.74279
+   21.27900   17.92900
+   14.90800   12.05400
+   18.95900   17.05400
+    7.21820    4.88520
+    8.29510    5.74420
+   10.23600    7.77540
+    5.49940    1.01730
+   20.34100   20.99200
+   10.13600    6.67990
+    7.33450    4.02590
+    6.00620    1.27840
+    7.22590    3.34110
+    5.02690   -2.68070
+    6.54790    0.29678
+    7.53860    3.88450
+    5.03650    5.70140
+   10.27400    6.75260
+    5.10770    2.05760
+    5.72920    0.47953
+    5.18840    0.20421
+    6.35570    0.67861
+    9.76870    7.54350
+    6.51590    5.34360
+    8.51720    4.24150
+    9.18020    6.79810
+    6.00200    0.92695
+    5.52040    0.15200
+    5.05940    2.82140
+    5.70770    1.84510
+    7.63660    4.29590
+    5.87070    7.20290
+    5.30540    1.98690
+    8.29340    0.14454
+   13.39400    9.05510
+    5.43690    0.61705
+
+O>> size(ex1data1)
+ans =
+
+   97    2
+
+O>> whos % provides more detail than who
+Variables in the current scope:
+
+   Attr Name          Size                     Bytes  Class
+   ==== ====          ====                     =====  ===== 
+        A             3x2                         48  double
+        V             1x4                         32  double
+        a             3x2                         48  double
+        ans           1x2                         16  double
+        ex1data1     97x2                       1552  double
+
+Total is 212 elements using 1696 bytes
+
+O>> clear a
+O>> whos
+Variables in the current scope:
+
+   Attr Name          Size                     Bytes  Class
+   ==== ====          ====                     =====  ===== 
+        A             3x2                         48  double
+        V             1x4                         32  double
+        ans           1x2                         16  double
+        ex1data1     97x2                       1552  double
+
+Total is 206 elements using 1648 bytes
+
+O>> Z = ex1data1(1:10)
+Z =
+
+ Columns 1 through 8:
+
+   6.1101   5.5277   8.5186   7.0032   5.8598   8.3829   7.4764   8.5781
+
+ Columns 9 and 10:
+
+   6.4862   5.0546
+
+O>> whos
+Variables in the current scope:
+
+   Attr Name          Size                     Bytes  Class
+   ==== ====          ====                     =====  ===== 
+        A             3x2                         48  double
+        V             1x4                         32  double
+        Z             1x10                        80  double
+        ans           1x2                         16  double
+        ex1data1     97x2                       1552  double
+
+Total is 216 elements using 1728 bytes
+
+O>> save Z-vector.m Z
+O>> ls
+Z-vector.m		ex1data1.txt		lib
+computeCost.m		ex1data2.txt		normalEqn.m
+computeCostMulti.m	featureNormalize.m	plotData.m
+ex1.m			gradientDescent.m	submit.m
+ex1_multi.m		gradientDescentMulti.m	warmUpExercise.m
+O>> ls Z-vector.m 
+Z-vector.m
+O>> clear % clears all vars
+O>> whos
+O>> who
+O>> load Z-vector.m
+O>> whos
+Variables in the current scope:
+
+   Attr Name        Size                     Bytes  Class
+   ==== ====        ====                     =====  ===== 
+        Z           1x10                        80  double
+
+Total is 10 elements using 80 bytes
+
+O>> save Z-vector.txt Z -ascii % saves as txt. Without switch saves as compressed binary
+O>> ls Z-vector.txt
+Z-vector.txt
+O>> %
+O>> % Manipulating data
+O>> %
+O>> A = [1 2; 3 4; 56]
+error: vertical dimensions mismatch (2x2 vs 1x1)
+O>> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> A[3, 2]
+parse error:
+
+  syntax error
+
+>>> A[3, 2]
+     ^
+
+O>> A(3, 2) % 3rd row, 2 column
+ans =  6
+O>> A[2; :) % Everyting in 2nd row
+parse error:
+
+  syntax error
+
+>>> A[2; :) % Everyting in 2nd row
+     ^
+
+O>> A(2; :) % Everyting in 2nd row
+parse error:
+
+  syntax error
+
+>>> A(2; :) % Everyting in 2nd row
+       ^
+
+O>> A(2, :) % Everyting in 2nd row
+ans =
+
+   3   4
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> A(:, 1) % everything in first column
+ans =
+
+   1
+   3
+   5
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> A([1 3], :) % Give me everything from row 1 and 3
+ans =
+
+   1   2
+   5   6
+
+O>> A(:,[2])
+ans =
+
+   2
+   4
+   6
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> A(:, 2) = [10; 11; 12]
+A =
+
+    1   10
+    3   11
+    5   12
+
+O>> A = [A, [100; 101; 102]] % APPENDS a column to A
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+O>> size(A)
+ans =
+
+   3   3
+
+O>> A(:) % Create a vector using all elements of A matrix
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+O>> A
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+O>> A(:) % Create a vector using all elements of A matrix
+ans =
+
+     1
+     3
+     5
+    10
+    11
+    12
+   100
+   101
+   102
+
+O>> A
+A =
+
+     1    10   100
+     3    11   101
+     5    12   102
+
+O>> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> B = [11 12; 13 14; 15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+O>> C = [A B] % appends B as columns to A
+C =
+
+    1    2   11   12
+    3    4   13   14
+    5    6   15   16
+
+O>> D = [A; B] % Adds B as rows to A
+D =
+
+    1    2
+    3    4
+    5    6
+   11   12
+   13   14
+   15   16
+
+O>> diary off

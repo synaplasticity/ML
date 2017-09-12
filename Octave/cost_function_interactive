@@ -1,0 +1,44 @@
+O>> a = [0;1]
+a =
+
+   0
+   1
+
+O>> X = [1 1;1 2;1 3]
+X =
+
+   1   1
+   1   2
+   1   3
+
+O>> Y = [1;2;3]
+Y =
+
+   1
+   2
+   3
+
+O>> theta = [0;1]
+theta =
+
+   0
+   1
+
+O>> m = size(X, 1)
+m =  3
+O>> hypothesis = X*theta
+hypothesis =
+
+   1
+   2
+   3
+
+O>> sqrErrors = (hypothesis - Y).^2
+sqrErrors =
+
+   0
+   0
+   0
+
+O>> J = 1/(2*m) * sum(sqrErrors)
+J = 0

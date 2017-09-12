@@ -1,0 +1,232 @@
+O>> t = [0 : 0.01 : 0.98]
+t =
+
+ Columns 1 through 8:
+
+   0.00000   0.01000   0.02000   0.03000   0.04000   0.05000   0.06000   0.07000
+
+ Columns 9 through 16:
+
+   0.08000   0.09000   0.10000   0.11000   0.12000   0.13000   0.14000   0.15000
+
+ Columns 17 through 24:
+
+   0.16000   0.17000   0.18000   0.19000   0.20000   0.21000   0.22000   0.23000
+
+ Columns 25 through 32:
+
+   0.24000   0.25000   0.26000   0.27000   0.28000   0.29000   0.30000   0.31000
+
+ Columns 33 through 40:
+
+   0.32000   0.33000   0.34000   0.35000   0.36000   0.37000   0.38000   0.39000
+
+ Columns 41 through 48:
+
+   0.40000   0.41000   0.42000   0.43000   0.44000   0.45000   0.46000   0.47000
+
+ Columns 49 through 56:
+
+   0.48000   0.49000   0.50000   0.51000   0.52000   0.53000   0.54000   0.55000
+
+ Columns 57 through 64:
+
+   0.56000   0.57000   0.58000   0.59000   0.60000   0.61000   0.62000   0.63000
+
+ Columns 65 through 72:
+
+   0.64000   0.65000   0.66000   0.67000   0.68000   0.69000   0.70000   0.71000
+
+ Columns 73 through 80:
+
+   0.72000   0.73000   0.74000   0.75000   0.76000   0.77000   0.78000   0.79000
+
+ Columns 81 through 88:
+
+   0.80000   0.81000   0.82000   0.83000   0.84000   0.85000   0.86000   0.87000
+
+ Columns 89 through 96:
+
+   0.88000   0.89000   0.90000   0.91000   0.92000   0.93000   0.94000   0.95000
+
+ Columns 97 through 99:
+
+   0.96000   0.97000   0.98000
+
+O>> sinfunc = sin(2 * pi * 4 * t)
+sinfunc =
+
+ Columns 1 through 8:
+
+   0.00000   0.24869   0.48175   0.68455   0.84433   0.95106   0.99803   0.98229
+
+ Columns 9 through 16:
+
+   0.90483   0.77051   0.58779   0.36812   0.12533  -0.12533  -0.36812  -0.58779
+
+ Columns 17 through 24:
+
+  -0.77051  -0.90483  -0.98229  -0.99803  -0.95106  -0.84433  -0.68455  -0.48175
+
+ Columns 25 through 32:
+
+  -0.24869  -0.00000   0.24869   0.48175   0.68455   0.84433   0.95106   0.99803
+
+ Columns 33 through 40:
+
+   0.98229   0.90483   0.77051   0.58779   0.36812   0.12533  -0.12533  -0.36812
+
+ Columns 41 through 48:
+
+  -0.58779  -0.77051  -0.90483  -0.98229  -0.99803  -0.95106  -0.84433  -0.68455
+
+ Columns 49 through 56:
+
+  -0.48175  -0.24869  -0.00000   0.24869   0.48175   0.68455   0.84433   0.95106
+
+ Columns 57 through 64:
+
+   0.99803   0.98229   0.90483   0.77051   0.58779   0.36812   0.12533  -0.12533
+
+ Columns 65 through 72:
+
+  -0.36812  -0.58779  -0.77051  -0.90483  -0.98229  -0.99803  -0.95106  -0.84433
+
+ Columns 73 through 80:
+
+  -0.68455  -0.48175  -0.24869  -0.00000   0.24869   0.48175   0.68455   0.84433
+
+ Columns 81 through 88:
+
+   0.95106   0.99803   0.98229   0.90483   0.77051   0.58779   0.36812   0.12533
+
+ Columns 89 through 96:
+
+  -0.12533  -0.36812  -0.58779  -0.77051  -0.90483  -0.98229  -0.99803  -0.95106
+
+ Columns 97 through 99:
+
+  -0.84433  -0.68455  -0.48175
+
+O>> 
+O>> sinfunc = sin(2 * pi * 4 * t);
+O>> plot(t, y1) % Where t is x - axis
+error: 'y1' undefined near line 1 column 9
+O>> plot(t, sinfunc); % Where t is x - axis
+O>> 
+O>> cosinfunc = cos(2 * pi * 4 * t);
+O>> plot(t, cosinfunc);
+O>> 
+O>> 
+O>> % plotting both
+O>> plot(t, sinfunc); % Where t is x - axis
+O>> hold on; % holds until you exit
+O>> plot(t, cosinfunc, 'r'); % use red color
+O>> xlabel('time')
+O>> ylabel('value')
+O>> legend('sin', 'cos')
+O>> print -dpng sin-cos.png
+warning: print.m: fig2dev binary is not available.
+Some output formats are not available.
+warning: called from
+    __print_parse_opts__ at line 388 column 9
+    print at line 315 column 8
+O>> ls -ltr
+total 344
+-rw-r--r--@ 1 vinod  staff   1876 Mar 13 18:40 submit.m
+-rw-r--r--@ 1 vinod  staff    878 Mar 13 18:40 plotData.m
+-rw-r--r--@ 1 vinod  staff    645 Mar 13 18:40 normalEqn.m
+-rw-r--r--@ 1 vinod  staff    933 Mar 13 18:40 gradientDescentMulti.m
+-rw-r--r--@ 1 vinod  staff    905 Mar 13 18:40 gradientDescent.m
+-rw-r--r--@ 1 vinod  staff   1249 Mar 13 18:40 featureNormalize.m
+-rw-r--r--@ 1 vinod  staff    657 Mar 13 18:40 ex1data2.txt
+-rw-r--r--@ 1 vinod  staff   1359 Mar 13 18:40 ex1data1.txt
+-rw-r--r--@ 1 vinod  staff   4460 Mar 13 18:40 ex1_multi.m
+-rw-r--r--@ 1 vinod  staff    671 Mar 13 18:40 computeCostMulti.m
+-rw-r--r--@ 1 vinod  staff    632 Mar 13 18:40 computeCost.m
+-rw-r--r--@ 1 vinod  staff   3908 Mar 19 22:50 ex1.m
+-rw-r--r--  1 vinod  staff    231 Aug 23 21:42 Z-vector.m
+-rw-r--r--  1 vinod  staff    151 Aug 23 21:44 Z-vector.txt
+-rw-r--r--@ 1 vinod  staff    518 Aug 23 22:08 warmUpExercise.m
+-rw-r--r--  1 vinod  staff    238 Aug 23 22:09 token.mat
+drwxr-xr-x@ 6 vinod  staff    204 Sep  2 12:16 lib
+-rw-r--r--  1 vinod  staff  80401 Sep  5 22:11 octave-workspace
+-rw-r--r--  1 vinod  staff      0 Sep  6 21:36 diary
+-rw-r--r--  1 vinod  staff  21680 Sep  6 21:46 sin-cos.png
+O>> close; % closes the diagram
+O>> 
+O>> 
+O>> %
+O>> % Multiple digrams with names
+O>> %
+O>> figure(1); plot(t, sinfunc); % Where t is x - axis
+O>> figure(2); plot(t, cosinfunc, 'r'); % use red color
+O>> close
+O>> close
+O>> 
+O>> 
+O>> %
+O>> % Dividing the screen into multiple graphs
+O>> %
+O>> 
+O>> subplot(1, 2, 1) % divide plot into a 1 \x2 grid and access from 1st element
+O>> plot(t, sinfunc) % now plot a function on that
+O>> subploy(1, 2, 2)
+error: 'subploy' undefined near line 1 column 1
+O>> subplot(1, 2, 2)
+O>> plot(t, cosinfunc) % now plot a function on that
+O>> subplot(1, 2, 3)
+error: called from
+    subplot at line 165 column 7
+error: subplot: INDEX value must be >= 1 and <= ROWS*COLS
+O>> 
+O>> 
+O>> % so subplot(2, 2, 1) means create 2 rows and 2 cols of graph space and
+O>> % access the 1st graph
+O>> 
+O>> 
+O>> plot(t, cosinfunc) % now plot a function on that
+O>> 
+O>> % you can change the axis range as follows - x range first
+O>> axis([0.5 1 -1 1])
+O>> print -dpng cosfunc-after-x-axis-change.png
+O>> close
+O>> 
+O>> 
+O>> % visualizing matrices
+O>> 
+O>> A = magic(5)
+A =
+
+   17   24    1    8   15
+   23    5    7   14   16
+    4    6   13   20   22
+   10   12   19   21    3
+   11   18   25    2    9
+
+O>> imagesc(A) % creates a colorfull matrix representation
+O>> print -dpng colorful_matrix_rep.png
+O>> 
+O>> clf; % clears graph
+O>> 
+O>> 
+O>> % grey scale is better for comparison
+O>> imagesc(A), colorbar, colormap gray ; use gray scale and display colog bar legend
+error: 'use' undefined near line 2 column 40
+O>> imagesc(A), colorbar, colormap gray % use gray scale and display colog bar legend
+O>> print -dpng matrix_rep_in_gray_scale.png
+O>> clf;
+O>> imagesc(magic(15)), colorbar, colormap gray ; use gray scale and display colog bar legend
+error: 'use' undefined near line 1 column 48
+O>> close
+O>> 
+O>> 
+O>> % command chaining
+O>> a = 1, b = 2, b = 3
+a =  1
+b =  2
+b =  3
+O>> % can do it with ";" too, sut it supresses output 
+O>> a = 1; b = 2; b = 3
+b =  3
+O>> diary off

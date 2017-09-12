@@ -1,0 +1,683 @@
+O>> A = [1 2;3 4;5 6;]
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> B = [11 12;13 14; 15 16]
+B =
+
+   11   12
+   13   14
+   15   16
+
+O>> C = [1 1; 2 2]
+C =
+
+   1   1
+   2   2
+
+O>> size A
+ans =
+
+   1   1
+
+O>> size(A)
+ans =
+
+   3   2
+
+O>> size(C)
+ans =
+
+   2   2
+
+O>> A*C % matrix multiplication
+ans =
+
+    5    5
+   11   11
+   17   17
+
+O>> A*B % should fail
+error: operator *: nonconformant arguments (op1 is 3x2, op2 is 3x2)
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> B
+B =
+
+   11   12
+   13   14
+   15   16
+
+O>> A .* B % Take each element of A and muliply by it's corresponding element in B
+ans =
+
+   11   24
+   39   56
+   75   96
+
+O>> A .* C
+error: product: nonconformant arguments (op1 is 3x2, op2 is 2x2)
+O>> A .^ 2
+ans =
+
+    1    4
+    9   16
+   25   36
+
+O>> A .^ 2 % "." represents elment wise operations. e.g.: exponent by 2
+ans =
+
+    1    4
+    9   16
+   25   36
+
+O>> 
+O>> V = [1; 2; 3]
+V =
+
+   1
+   2
+   3
+
+O>> 1 ./ A % INVERSE of V
+ans =
+
+   1.00000   0.50000
+   0.33333   0.25000
+   0.20000   0.16667
+
+O>> 1 ./ V % INVERSE of V
+ans =
+
+   1.00000
+   0.50000
+   0.33333
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> 1 ./ A % INVERSE of A
+ans =
+
+   1.00000   0.50000
+   0.33333   0.25000
+   0.20000   0.16667
+
+O>> log(v) % logarithm
+error: 'v' undefined near line 1 column 5
+O>> log(V) % logarithm
+ans =
+
+   0.00000
+   0.69315
+   1.09861
+
+O>> exp(V) % exponent of V (v0, v1sqaured, v2cubed etc)
+ans =
+
+    2.7183
+    7.3891
+   20.0855
+
+O>> abs([-1; 2; 3])
+ans =
+
+   1
+   2
+   3
+
+O>> -V
+ans =
+
+  -1
+  -2
+  -3
+
+O>> length(v)
+error: 'v' undefined near line 1 column 8
+O>> length(V)
+ans =  3
+O>> V*ones(length(V), 1)
+error: operator *: nonconformant arguments (op1 is 3x1, op2 is 3x1)
+O>> V + ones(length(V), 1)
+ans =
+
+   2
+   3
+   4
+
+O>> V + ones(length(V), 1) % Adding 1 to each elemtn of V
+ans =
+
+   2
+   3
+   4
+
+O>> V + 1 % easier way to add 1 to each element of V
+ans =
+
+   2
+   3
+   4
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> A'
+ans =
+
+   1   3   5
+   2   4   6
+
+O>> A' % Transpose
+ans =
+
+   1   3   5
+   2   4   6
+
+O>> (A')'
+ans =
+
+   1   2
+   3   4
+   5   6
+
+O>> A
+A =
+
+   1   2
+   3   4
+   5   6
+
+O>> B
+B =
+
+   11   12
+   13   14
+   15   16
+
+O>> A * B'
+ans =
+
+    35    41    47
+    81    95   109
+   127   149   171
+
+O>> rv = [1 5 2 45]
+rv =
+
+    1    5    2   45
+
+O>> v[1;5;2;45]
+parse error:
+
+  syntax error
+
+>>> v[1;5;2;45]
+     ^
+
+O>> v = [1;5;2;45]
+v =
+
+    1
+    5
+    2
+   45
+
+O>> [val, ind] = max(v)
+val =  45
+ind =  4
+O>> v < 3 % return 1 or 0 for rach element based on the predicate
+ans =
+
+  1
+  0
+  1
+  0
+
+O>> find(v < 3) % returns the index of lements < 3
+ans =
+
+   1
+   3
+
+O>> A - magic(3) % each row, column, diagonal sum up to the same value. useful for creating test matrices
+error: operator -: nonconformant arguments (op1 is 3x2, op2 is 3x3)
+O>> A = magic(3) % each row, column, diagonal sum up to the same value. useful for creating test matrices
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> ls
+Z-vector.m		ex1data1.txt		octave-workspace
+Z-vector.txt		ex1data2.txt		plotData.m
+computeCost.m		featureNormalize.m	submit.m
+computeCostMulti.m	gradientDescent.m	token.mat
+diary			gradientDescentMulti.m	warmUpExercise.m
+ex1.m			lib
+ex1_multi.m		normalEqn.m
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> [r, c] = find(A > 7) % returns the row wise and column wise location when true
+r =
+
+   1
+   3
+
+c =
+
+   1
+   2
+
+O>> a
+error: 'a' undefined near line 1 column 1
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> V
+V =
+
+   1
+   2
+   3
+
+O>> sum(V) % sum's up all the elements
+ans =  6
+O>> prod(V)
+ans =  6
+O>> floor(V)
+ans =
+
+   1
+   2
+   3
+
+O>> X = [0.5, 1.7. 2]
+parse error:
+
+  syntax error
+
+>>> X = [0.5, 1.7. 2]
+                 ^
+
+O>> X = [0.5, 1.7, 2]
+X =
+
+   0.50000   1.70000   2.00000
+
+O>> floor(X)
+ans =
+
+   0   1   2
+
+O>> ceil(X) % round up
+ans =
+
+   1   2   2
+
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> max(A, [], 1) % returns max number for each column
+ans =
+
+   8   9   7
+
+O>> max(A, 1, [])
+error: invalid conversion from real matrix to real scalar
+error: octave_base_value::int_value (): wrong type argument 'null_matrix'
+O>> max(A, [], 2) % returns max number for each row
+ans =
+
+   8
+   7
+   9
+
+O>> max(A) % highhest number in the matrix
+ans =
+
+   8   9   7
+
+O>> a
+error: 'a' undefined near line 1 column 1
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> max(max(A)) % largest number in the entire matrix
+ans =  9
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> max(A(:)) % another way to find max is first convert A into a vector
+ans =  9
+O>> 
+O>> 
+O>> D = magic(9)
+D =
+
+   47   58   69   80    1   12   23   34   45
+   57   68   79    9   11   22   33   44   46
+   67   78    8   10   21   32   43   54   56
+   77    7   18   20   31   42   53   55   66
+    6   17   19   30   41   52   63   65   76
+   16   27   29   40   51   62   64   75    5
+   26   28   39   50   61   72   74    4   15
+   36   38   49   60   71   73    3   14   25
+   37   48   59   70   81    2   13   24   35
+
+O>> sum(D, 1) % row wise sum
+ans =
+
+   369   369   369   369   369   369   369   369   369
+
+O>> sum(D, 2) % col. wise sum
+ans =
+
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+   369
+
+O>> sum(D, 3)
+ans =
+
+   47   58   69   80    1   12   23   34   45
+   57   68   79    9   11   22   33   44   46
+   67   78    8   10   21   32   43   54   56
+   77    7   18   20   31   42   53   55   66
+    6   17   19   30   41   52   63   65   76
+   16   27   29   40   51   62   64   75    5
+   26   28   39   50   61   72   74    4   15
+   36   38   49   60   71   73    3   14   25
+   37   48   59   70   81    2   13   24   35
+
+O>> D
+D =
+
+   47   58   69   80    1   12   23   34   45
+   57   68   79    9   11   22   33   44   46
+   67   78    8   10   21   32   43   54   56
+   77    7   18   20   31   42   53   55   66
+    6   17   19   30   41   52   63   65   76
+   16   27   29   40   51   62   64   75    5
+   26   28   39   50   61   72   74    4   15
+   36   38   49   60   71   73    3   14   25
+   37   48   59   70   81    2   13   24   35
+
+O>> eye(9)
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0   0   0   0   0   0
+   0   1   0   0   0   0   0   0   0
+   0   0   1   0   0   0   0   0   0
+   0   0   0   1   0   0   0   0   0
+   0   0   0   0   1   0   0   0   0
+   0   0   0   0   0   1   0   0   0
+   0   0   0   0   0   0   1   0   0
+   0   0   0   0   0   0   0   1   0
+   0   0   0   0   0   0   0   0   1
+
+O>> sum( A .* eye(9) ) % to sum diagonal, first multiply by identity matrix 
+error: product: nonconformant arguments (op1 is 3x3, op2 is 9x9)
+O>> sum( D .* eye(9) ) % to sum diagonal, first multiply by identity matrix 
+ans =
+
+   47   68    8   20   41   62   74   14   35
+
+O>> sum( D .* eye(9) ) % to sum diagonal, first multiply by identity matrix 
+ans =
+
+   47   68    8   20   41   62   74   14   35
+
+O>> sum(D)
+ans =
+
+   369   369   369   369   369   369   369   369   369
+
+O>> sum(sum(D))
+ans =  3321
+O>> help sum
+'sum' is a built-in function from the file libinterp/corefcn/data.cc
+
+ -- sum (X)
+ -- sum (X, DIM)
+ -- sum (..., "native")
+ -- sum (..., "double")
+ -- sum (..., "extra")
+     Sum of elements along dimension DIM.
+
+     If DIM is omitted, it defaults to the first non-singleton
+     dimension.
+
+     The optional "type" input determines the class of the variable used
+     for calculations.  If the argument "native" is given, then the
+     operation is performed in the same type as the original argument,
+     rather than the default double type.
+
+     For example:
+
+          sum ([true, true])
+             => 2
+          sum ([true, true], "native")
+             => true
+
+     On the contrary, if "double" is given, the sum is performed in
+     double precision even for single precision inputs.
+
+     For double precision inputs, the "extra" option will use a more
+     accurate algorithm than straightforward summation.  For single
+     precision inputs, "extra" is the same as "double".  Otherwise,
+     "extra" has no effect.
+
+     See also: cumsum, sumsq, prod.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.
+O>> D
+D =
+
+   47   58   69   80    1   12   23   34   45
+   57   68   79    9   11   22   33   44   46
+   67   78    8   10   21   32   43   54   56
+   77    7   18   20   31   42   53   55   66
+    6   17   19   30   41   52   63   65   76
+   16   27   29   40   51   62   64   75    5
+   26   28   39   50   61   72   74    4   15
+   36   38   49   60   71   73    3   14   25
+   37   48   59   70   81    2   13   24   35
+
+O>> D .* eye(9)
+ans =
+
+   47    0    0    0    0    0    0    0    0
+    0   68    0    0    0    0    0    0    0
+    0    0    8    0    0    0    0    0    0
+    0    0    0   20    0    0    0    0    0
+    0    0    0    0   41    0    0    0    0
+    0    0    0    0    0   62    0    0    0
+    0    0    0    0    0    0   74    0    0
+    0    0    0    0    0    0    0   14    0
+    0    0    0    0    0    0    0    0   35
+
+O>> sum(D .* eye(9))
+ans =
+
+   47   68    8   20   41   62   74   14   35
+
+O>> sum( sum(D .* eye(9)) )
+ans =  369
+O>> A
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> sum(A)
+ans =
+
+   15   15   15
+
+O>> A = [A] [4; 2; 7]
+parse error:
+
+  syntax error
+
+>>> A = [A] [4; 2; 7]
+           ^
+
+O>> A = [A 4; 2; 7]
+error: horizontal dimensions mismatch (3x3 vs 1x1)
+O>> A = [A; 4; 2; 7]
+error: vertical dimensions mismatch (3x3 vs 1x1)
+O>> A(:,3) = [4; 2; 6]
+A =
+
+   8   1   4
+   3   5   2
+   4   9   6
+
+O>> A
+A =
+
+   8   1   4
+   3   5   2
+   4   9   6
+
+O>> sum(A)
+ans =
+
+   15   15   12
+
+O>> rv
+rv =
+
+    1    5    2   45
+
+O>> sum(rv)
+ans =  53
+O>> A
+A =
+
+   8   1   4
+   3   5   2
+   4   9   6
+
+O>> sum(A .* eye(3))
+ans =
+
+   8   5   6
+
+O>> sum( sum( A .* eye(3)) )
+ans =  19
+O>> eye(9)
+ans =
+
+Diagonal Matrix
+
+   1   0   0   0   0   0   0   0   0
+   0   1   0   0   0   0   0   0   0
+   0   0   1   0   0   0   0   0   0
+   0   0   0   1   0   0   0   0   0
+   0   0   0   0   1   0   0   0   0
+   0   0   0   0   0   1   0   0   0
+   0   0   0   0   0   0   1   0   0
+   0   0   0   0   0   0   0   1   0
+   0   0   0   0   0   0   0   0   1
+
+O>> flipud(eye(9)) % flipped identitiy matrix
+ans =
+
+Permutation Matrix
+
+   0   0   0   0   0   0   0   0   1
+   0   0   0   0   0   0   0   1   0
+   0   0   0   0   0   0   1   0   0
+   0   0   0   0   0   1   0   0   0
+   0   0   0   0   1   0   0   0   0
+   0   0   0   1   0   0   0   0   0
+   0   0   1   0   0   0   0   0   0
+   0   1   0   0   0   0   0   0   0
+   1   0   0   0   0   0   0   0   0
+
+O>> 
+O>> 
+O>> A = magic(3)
+A =
+
+   8   1   6
+   3   5   7
+   4   9   2
+
+O>> temp = pinv(A) % 1/A
+temp =
+
+   0.147222  -0.144444   0.063889
+  -0.061111   0.022222   0.105556
+  -0.019444   0.188889  -0.102778
+
+O>> temp * A % provids identity matrix
+ans =
+
+   1.0000e+00   3.3307e-16  -3.1086e-15
+  -6.0507e-15   1.0000e+00   6.3283e-15
+   3.1086e-15   3.2613e-16   1.0000e+00
+
+O>> draft off
+error: 'draft' undefined near line 1 column 1
+O>> mv draft computing_data.txt
+error: 'mv' undefined near line 1 column 1
+O>> pwd
+ans = /Users/vinod/programming/ML/ML course/Week 2/machine-learning-ex1/ex1
+O>> diary off

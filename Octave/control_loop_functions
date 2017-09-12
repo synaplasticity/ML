@@ -1,0 +1,529 @@
+O>> %
+O>> %
+O>> % Control statements, loops etc.
+O>> %
+O>> %
+O>> v = zeros(;10)
+parse error:
+
+  syntax error
+
+>>> v = zeros(;10)
+              ^
+
+O>> v = zeros(10;)
+parse error:
+
+  syntax error
+
+>>> v = zeros(10;)
+                ^
+
+O>> v = zeros(10, 1))
+parse error:
+
+  syntax error
+
+>>> v = zeros(10, 1))
+                    ^
+
+O>> v = zeros(10, 1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+O>> help zeros
+'zeros' is a built-in function from the file libinterp/corefcn/data.cc
+
+ -- zeros (N)
+ -- zeros (M, N)
+ -- zeros (M, N, K, ...)
+ -- zeros ([M N ...])
+ -- zeros (..., CLASS)
+     Return a matrix or N-dimensional array whose elements are all 0.
+
+     If invoked with a single scalar integer argument, return a square
+     NxN matrix.
+
+     If invoked with two or more scalar integer arguments, or a vector
+     of integer values, return an array with the given dimensions.
+
+     The optional argument CLASS specifies the class of the return array
+     and defaults to double.  For example:
+
+          val = zeros (m,n, "uint8")
+
+     See also: ones.
+
+Additional help for built-in functions and operators is
+available in the online version of the manual.  Use the command
+'doc <topic>' to search the manual index.
+
+Help and information about Octave is also available on the WWW
+at http://www.octave.org and via the help@octave.org
+mailing list.
+O>> v
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+O>> for i = 1:10,
+>       v(i) = i^2;
+>   end
+O>> 
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> size(v)
+ans =
+
+   10    1
+
+O>> vsizemat = size(v)
+vsizemat =
+
+   10    1
+
+O>> vsize = vsizemat(1,1)
+vsize =  10
+O>> for i = 1:vsize;
+>       v(i) = i^2;
+>   end
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> for i = 1:vsize;
+>      print(i)
+> end
+error: called from
+    strtrim at line 74 column 5
+    __print_parse_opts__ at line 81 column 9
+    print at line 315 column 8
+error: strtrim: S argument must be a string or cellstring
+O>> for i = 1:vsize;
+>      printf(i)
+> end
+error: printf: format TEMPLATE must be a string
+O>> for i = 1:vsize;
+>      printf("%2d", i)
+> end
+ 1 2 3 4 5 6 7 8 910O>> 
+O>> for i = 1:vsize;
+>      v(i) = i^2;
+> end;
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> format long
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> for i = 1:5;
+>     x(i) = i;
+> end
+O>> x
+x =
+
+   1   2   3   4   5
+
+O>> for i = 1:5;
+>     x(i, 1) = i;
+> end
+O>> x
+x =
+
+   1   2   3   4   5
+   2   0   0   0   0
+   3   0   0   0   0
+   4   0   0   0   0
+   5   0   0   0   0
+
+O>> for i = 1:5,
+>     x(i, 1) = i;
+> end
+O>> x
+x =
+
+   1   2   3   4   5
+   2   0   0   0   0
+   3   0   0   0   0
+   4   0   0   0   0
+   5   0   0   0   0
+
+O>> for i = 1:vsize,
+>       v(i) = i^2;
+> end;
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> %
+O>> % while loop
+O>> %
+O>> i = 1
+i =  1
+O>> while i < 5,
+>    v(i) = i*i;
+>    i = i + 1;
+>   end;
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> V
+error: 'V' undefined near line 1 column 1
+O>> while i < 5,
+>    v(i) = i*i;
+>    i = i + 1;
+>   end
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> v = zeros(10, 1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+O>> for x=1:10,
+>     v(i) = i^2;
+>   end
+O>> 
+O>> v
+v =
+
+    0
+    0
+    0
+    0
+   25
+    0
+    0
+    0
+    0
+    0
+
+O>> for x=1:10,
+>     v(x) = i^2;
+> end
+O>> v
+v =
+
+   25
+   25
+   25
+   25
+   25
+   25
+   25
+   25
+   25
+   25
+
+O>> for x=1:10,
+>     v(x) = x^2;
+> end
+O>> v
+v =
+
+     1
+     4
+     9
+    16
+    25
+    36
+    49
+    64
+    81
+   100
+
+O>> vsize
+vsize =  10
+O>> for x=1:vsize,
+>     v(x) = 2^x;
+> end
+O>> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+O>> i 
+i =  5
+O>> i = 1
+i =  1
+O>> while i < 5,
+>     v(i) = i*i;
+>     i = i + 1;
+>   end
+O>> v
+v =
+
+      1
+      4
+      9
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+O>> i = 1
+i =  1
+O>> while i < 5,
+>     i = i;
+>     i = i + 1;
+>   end
+O>> v
+v =
+
+      1
+      4
+      9
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+
+O>> i = 1
+i =  1
+O>> while i < 5,
+>     v(i) = i + 1;
+>     i = i + 1;
+> end
+O>> v
+v =
+
+      2
+      3
+      4
+      5
+     32
+     64
+    128
+    256
+    512
+   1024
+
+O>> i = 1
+i =  1
+O>> while true,
+>     v(i) = 99;
+>     i = i + 1;
+>     if i > 6,
+>        break;
+>     end;
+>   end;
+O>> v
+v =
+
+     99
+     99
+     99
+     99
+     99
+     99
+    128
+    256
+    512
+   1024
+
+O>> v(1)
+ans =  99
+O>> v(1) = 2
+v =
+
+      2
+     99
+     99
+     99
+     99
+     99
+    128
+    256
+    512
+   1024
+
+O>> if v(1) == 1,
+>      disp('One');
+>   elseif v(1) == 2,
+>      disp('Two');
+>   else
+>      disp('--')
+>   end;
+Two
+O>> 
+O>> 
+O>> 
+O>> %
+O>> % functions
+O>> %
+O>> 
+O>> function y = sqThisNo(x)
+> y = x^2
+> ;
+> sqThisNo(2)
+> ;
+> y
+> pwd
+> ;
+> 1/0
+> ;
+> quit
+> 
+O>> 
+O>> 
+O>> pwd
+ans = /Users/vinod/programming/ML/ML course/Week 2/machine-learning-ex1/ex1
+O>> % Octave search path (like classpath)
+O>> addpath('/Users/vinod/programming/ML/Octave/')
+O>> 
+O>> addpath('/Users/vinod/programming/ML/Octave/')
+O>> squareThisNumber(2)
+y =  4
+ans =  4
+O>> [s, c] = squareAndCubeThisNumber(3)
+error: called from
+    squareAndCubeThisNumber at line 3 column 3
+error: 'x' undefined near line 3 column 5
+O>> [s, c] = squareAndCubeThisNumber(3)
+s =  9
+c =  27
+s =  9
+c =  27
+O>> [s, c] = squareAndCubeThisNumber(3);
+s =  9
+c =  27
+O>> s
+s =  9
+O>> c
+c =  27
+O>> diary off
