@@ -97,28 +97,17 @@ fprintf("\nFeature size is %f : ", m);
         theta(2,:) = ( theta(2,:) - (alpha * (1/m) * x1_errDiffSum) )  ; % final GD formula
 
 
-%         hypothesis_x = X * theta;
-%         errDiff = (hypothesis_x - y) .* X(:, 2);
-%         errDiffSum = sum(errDiff);
-% 
-%         theta = theta - (alpha * (errDiffSum / m));
-
-        % ============================================================
 
         % Save the cost J in every iteration    
-        %J_history(iter) = computeCost(X, y, theta);
         cc = computeCost(X, y, theta);
         J_history(iter) = cc;
-
-        %fprintf("\nTheta %f Cost %f\n",  theta, J_history(iter)); 
-        %fprintf("\nIteration %d, Theta =%0.15f;%0.15f, \ncost =%0.15f \n",  iter, theta, cc); 
-
 
         % plot the predication line
         figure(9999);
         plot(X(:,2), X*theta, 'o')
 
         % alternate between red and yellow color for QD values
+        % so we have a better progressive change on the screen
         figure(999);
         if (mod(iter, 25) == 0)
             plot(theta(1,:), theta(2,:), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
@@ -132,14 +121,13 @@ fprintf("\nFeature size is %f : ", m);
     % Plot the final theta value
     plot(theta(1,:), theta(2,:), 'gx', 'MarkerSize', 20, 'LineWidth', 2);
 
-    % plot the training data distribution
+    % plot the training data distribution 
     figure(9999);
     plot(X, y, 'kx', 'Markersize', 5);
     ylabel('Profit in $10,000s');
     xlabel('Population of City in 10,000s');
     hold on;
-
-    % plot the prediction line for the given data using the new theta
+    % plot the prediction line on the given data using the new theta
     % values
     plot(X(:,2), X*theta, '-')
 
