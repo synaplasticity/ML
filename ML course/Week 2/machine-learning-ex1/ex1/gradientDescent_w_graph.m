@@ -17,6 +17,8 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
     plot(theta(1,:), theta(2,:), 'rx', 'MarkerSize', 20, 'LineWidth', 2);
 
 
+    drawInitialDataGraph(X, y);
+
     for iter = 1:num_iters
 
         % ====================== YOUR CODE HERE ======================
@@ -54,6 +56,7 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
         % alternate between red and yellow color for QD values
         % so we have a better progressive change on the screen
         figure(999);
+        hold on;
         if (mod(iter, 25) == 0)
             plot(theta(1,:), theta(2,:), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
         elseif (mod(iter, 50) == 0)
@@ -66,6 +69,5 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
     % Plot the final theta value
     plot(theta(1,:), theta(2,:), 'gx', 'MarkerSize', 20, 'LineWidth', 2);
 
-
-    drawFinalPredictionGraph(X, y, theta)
+    drawFinalPredictionGraph(X, y, theta);
 end
