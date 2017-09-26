@@ -70,4 +70,5 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
     plot(theta(1,:), theta(2,:), 'gx', 'MarkerSize', 20, 'LineWidth', 2);
 
     drawFinalPredictionGraph(X, y, theta);
+    
 end
