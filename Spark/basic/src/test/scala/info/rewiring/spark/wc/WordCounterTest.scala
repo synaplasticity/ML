@@ -41,8 +41,9 @@ class WordCounterTest extends FunSpec with BeforeAndAfter {
       }
 
       it("should return the correct count of top 2 words") {
-        val expectedResults: Array[(Int, String)] = Array((26856, "the"))
-        assert(wordCount.take(1).sameElements(expectedResults))
+        val expectedResults: Array[(Int, String)] = Array((26856, "the"), (24116, "and"))
+
+        assert(wordCount.take(2).sameElements(expectedResults))
       }
     }
 
