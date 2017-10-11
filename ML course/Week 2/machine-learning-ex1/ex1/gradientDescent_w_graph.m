@@ -3,6 +3,8 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
 %    theta = GRADIENTDESCENT(X, y, theta, alpha, num_iters) updates theta by 
 %       taking num_iters gradient steps with learning rate alpha
 
+    clock
+    
     format long;
 
     % Initialize some useful values
@@ -18,6 +20,9 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
 
 
     drawInitialDataGraph(X, y);
+
+    fprintf('Program paused. Press enter to continue.\n');
+    pause;
 
     for iter = 1:num_iters
 
@@ -51,7 +56,9 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
         theta(2,:) = ( theta(2,:) - (alpha * (1/m) * x1_errDiffSum) )  ; % final GD formula
 
 
-        drawPredicationLine(X, theta);
+%         drawPredicationLine(X, theta);
+        figure(9999, "position", [550 100 560 420]);
+        plot(X(:,2), X*theta, 'o', "markersize", 2)
 
         % alternate between red and yellow color for QD values
         % so we have a better progressive change on the screen
@@ -70,5 +77,6 @@ function [theta] = gradientDescent_w_graph(X, y, theta, alpha, num_iters)
     plot(theta(1,:), theta(2,:), 'gx', 'MarkerSize', 20, 'LineWidth', 2);
 
     drawFinalPredictionGraph(X, y, theta);
-    
+   
+    clock
 end

@@ -296,11 +296,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/gradientDescent_w_graph.m" afterPath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/gradientDescent_w_graph.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/load_data.m" afterPath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/load_data.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/predict.m" afterPath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/predict.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/basic.iml" afterPath="$PROJECT_DIR$/.idea/modules/basic.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sbt" afterPath="$PROJECT_DIR$/build.sbt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala" afterPath="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -708,7 +704,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507640195337</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creating Labeled point">
+      <created>1507716618110</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1507716618110</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -746,7 +749,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added more tests for map-reduce" />
     <MESSAGE value="Initial commit for linear regression" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit for linear regression" />
+    <MESSAGE value="Creating Labeled point" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating Labeled point" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

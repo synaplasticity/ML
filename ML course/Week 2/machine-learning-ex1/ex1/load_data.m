@@ -28,7 +28,7 @@
     alpha = 0.01
     
     % How many iterations
-    num_iters = 1500;
+    num_iters = 500;
     fprintf('Iterations (num_iters) : %d : \n', num_iters);
 
 
