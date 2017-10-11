@@ -11,6 +11,9 @@ class LinearRegressionTest extends FunSpec{
   val sc = new SparkContext(sparkConf)
   val data = sc.textFile("file:///opt/spark/data/mllib/popvsrev/ex1data1.csv")
 
+  val numOfIters = 10
+  val learnRate = 0.01
+
   describe("Simple linear regression") {
 
     describe("Basic load, univariate train and predict tests") {
@@ -19,8 +22,23 @@ class LinearRegressionTest extends FunSpec{
         assert(data.take(1).sameElements(expectedResults))
       }
 
+      it("should create the correct LabeledPoint for the given data") {
+        val linearRegression = LinearRegression(data, numOfIters, learnRate)
+
+        val labeledPoint = linearRegression.getData()
+
+        assert(labeledPoint.count() === 97)
+        assert(labeledPoint.first().label === 6.1101)
+        assert(labeledPoint.first().features.toString === "[17.592]")
+      }
+
     }
 
   }
+
+  override def finalize(): Unit = {
+    sc.stop()
+  }
+
 
 }
