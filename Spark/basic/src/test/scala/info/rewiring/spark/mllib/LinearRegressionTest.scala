@@ -1,5 +1,8 @@
 package info.rewiring.spark.mllib
 
+import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.mllib.regression.{LabeledPoint, LinearRegressionModel}
+import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.FunSpec
 
@@ -11,14 +14,14 @@ class LinearRegressionTest extends FunSpec{
   val sc = new SparkContext(sparkConf)
   val data = sc.textFile("file:///opt/spark/data/mllib/popvsrev/ex1data1.csv")
 
-  val numOfIters = 10
-  val learnRate = 0.01
+  val numOfIters = 15000
+  val learnRate = 0.1
 
   describe("Simple linear regression") {
 
     describe("Basic load, univariate train and predict tests") {
       it("Should load the provided resources correctly") {
-        val expectedResults = Array("6.1101,17.592")
+        val expectedResults = Array("17.592,6.1101")
         assert(data.take(1).sameElements(expectedResults))
       }
 
@@ -28,8 +31,22 @@ class LinearRegressionTest extends FunSpec{
         val labeledPoint = linearRegression.getData()
 
         assert(labeledPoint.count() === 97)
-        assert(labeledPoint.first().label === 6.1101)
-        assert(labeledPoint.first().features.toString === "[17.592]")
+        assert(labeledPoint.first().label === 17.592 )
+        assert(labeledPoint.first().features === Vectors.dense(6.1101))
+      }
+
+      it("should correctly train the model") {
+        val linearRegression = LinearRegression(data, numOfIters, learnRate)
+        val labeledPoint: RDD[LabeledPoint] = linearRegression.getData()
+
+        val model: LinearRegressionModel = linearRegression.train(labeledPoint)
+
+
+        println("Weights ------> " + model.weights)
+        assert(model.predict(Vectors.dense(20.0)) === 17.14723903437474)
+        assert(model.predict(Vectors.dense(40.0)) === 34.29447806874948)
+        assert(model.predict(Vectors.dense(50.0)) === 42.868097585936844)
+
       }
 
     }
