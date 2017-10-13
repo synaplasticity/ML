@@ -292,6 +292,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_uncommons_maths_uncommons_maths_1_2_2a_jar.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_xerial_snappy_snappy_java_1_1_1_7_jar.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__stax_stax_api_1_0_1_jar.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/load_data.m" afterPath="$PROJECT_DIR$/../../ML course/Week 2/machine-learning-ex1/ex1/load_data.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala" afterPath="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" />
@@ -363,11 +364,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinearRegressionTest.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinearRegressionTest.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="660">
+              <caret line="44" column="37" lean-forward="true" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
               <folding>
                 <element signature="e#35#79#0" expanded="true" />
               </folding>
@@ -375,11 +376,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinearRegression.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinearRegression.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="377">
+              <caret line="24" column="95" lean-forward="false" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
               <folding>
                 <element signature="e#35#97#0" expanded="true" />
               </folding>
@@ -418,8 +419,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/wc/WordCounter.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/wc/WordCounterTest.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala" />
       </list>
     </option>
   </component>
@@ -688,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507716697515</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added predictions">
+      <created>1507787107500</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507787107500</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -704,7 +712,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298292" sideWeight="0.49142858" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2693824" sideWeight="0.49142858" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -728,7 +736,8 @@
     <MESSAGE value="Initial commit for linear regression" />
     <MESSAGE value="Creating Labeled point" />
     <MESSAGE value="Refactoring plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring plots" />
+    <MESSAGE value="Added predictions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added predictions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1127,22 +1136,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="660">
+          <caret line="44" column="37" lean-forward="true" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
           <folding>
-            <element signature="e#35#97#0" expanded="true" />
+            <element signature="e#35#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/info/rewiring/spark/mllib/LinearRegressionTest.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/info/rewiring/spark/mllib/LinearRegression.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="377">
+          <caret line="24" column="95" lean-forward="false" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
           <folding>
-            <element signature="e#35#79#0" expanded="true" />
+            <element signature="e#35#97#0" expanded="true" />
           </folding>
         </state>
       </provider>

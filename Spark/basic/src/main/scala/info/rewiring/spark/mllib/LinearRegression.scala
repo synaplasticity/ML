@@ -27,7 +27,4 @@ case class LinearRegression(data: RDD[String], numOfIter: Int, learnRate: Double
 
 
 
-//  val aofA = x.map(l => l.split(","))
-//  val aOfADouble = aofA.map(o => o.map(i => i.toDouble))
-//  aOfADouble foreach(a => println(a(0)))
 }

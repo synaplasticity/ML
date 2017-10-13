@@ -8,7 +8,7 @@ import org.scalatest.FunSpec
 
 class LinearRegressionTest extends FunSpec{
   val sparkConf = new SparkConf()
-    .setAppName("Word count")
+    .setAppName("Linear regression")
     .setMaster("local")
 
   val sc = new SparkContext(sparkConf)
