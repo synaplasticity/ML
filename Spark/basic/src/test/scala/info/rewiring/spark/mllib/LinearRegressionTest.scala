@@ -14,8 +14,8 @@ class LinearRegressionTest extends FunSpec{
   val sc = new SparkContext(sparkConf)
   val data = sc.textFile("file:///opt/spark/data/mllib/popvsrev/ex1data1.csv")
 
-  val numOfIters = 15000
-  val learnRate = 0.1
+  val numOfIters = 75000
+  val learnRate = 0.09
 
   describe("Simple linear regression") {
 
@@ -32,7 +32,7 @@ class LinearRegressionTest extends FunSpec{
 
         assert(labeledPoint.count() === 97)
         assert(labeledPoint.first().label === 17.592 )
-        assert(labeledPoint.first().features === Vectors.dense(6.1101))
+        assert(labeledPoint.first().features === Vectors.dense(6.1101, 1))
       }
 
       it("should correctly train the model") {
@@ -43,9 +43,10 @@ class LinearRegressionTest extends FunSpec{
 
 
         println("Weights ------> " + model.weights)
-        assert(model.predict(Vectors.dense(20.0)) === 17.14723903437474)
-        assert(model.predict(Vectors.dense(40.0)) === 34.29447806874948)
-        assert(model.predict(Vectors.dense(50.0)) === 42.868097585936844)
+        linearRegression.evaluate(labeledPoint, model)
+        assert(model.predict(Vectors.dense(1, 20.0)) === 17.14723903437474)
+        assert(model.predict(Vectors.dense(1, 40.0)) === 34.29447806874948)
+        assert(model.predict(Vectors.dense(1, 50.0)) === 42.868097585936844)
 
       }
 

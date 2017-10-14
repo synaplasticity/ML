@@ -13,18 +13,28 @@ case class LinearRegression(data: RDD[String], numOfIter: Int, learnRate: Double
   def getData(): RDD[LabeledPoint] = {
 
     val parsedData = data.map { line =>
-      val x : Array[String] = line.replace("\n", " ").split(" ")
-      LabeledPoint.parse(x(0))
+      val rows : Array[String] = line.replace("\n", " ").split(" ")
+      val x: Array[String] = rows(0).split(",")
+      LabeledPoint.parse(x(0) + ",1 " + x(1))
     }.cache()
+
 
     parsedData
   }
 
   def train(trainingData: RDD[LabeledPoint]): LinearRegressionModel = {
 //    LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate)
-    LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate, 0.35, Vectors.dense(0.0))
+    LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate, 1.0, Vectors.dense(0.0, 0.0))
   }
 
+  def evaluate(parsedData: RDD[LabeledPoint], model: LinearRegressionModel) = {
+    // Evaluate model on training examples and compute training error
+    val valuesAndPreds = parsedData.map { point =>
+      val prediction = model.predict(point.features)
+      (point.label, prediction)
+    }
 
+    val MSE = valuesAndPreds.map{ case(v, p) => math.pow((v - p), 2) }.mean()
+    println("training Mean Squared Error = " + MSE)  }
 
 }
