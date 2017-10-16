@@ -1,7 +1,0 @@
-[0m[[0minfo[0m] [0m[32mWordCounterTest:[0m[0m
-[0m[[0minfo[0m] [0m[32mWord count test suite[0m[0m
-[0m[[0minfo[0m] [0m[32m  Basic internal step tests[0m[0m
-[0m[[0minfo[0m] [0m[32m  - should flatten the RDD and return a list of words[0m[0m
-[0m[[0minfo[0m] [0m[32m  - should return a collection of pairs = (word, 1)[0m[0m
-[0m[[0minfo[0m] [0m[32m  - should return a collection of pairs, wherein for a word a aggregate is provided[0m[0m
-[0m[[0minfo[0m] [0m[32m  - should return the correct count of top 2 words[0m[0m
