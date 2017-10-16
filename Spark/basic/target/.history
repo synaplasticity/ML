@@ -1,0 +1,15 @@
+show compile
+inspect compile
+inspect clean
+show compile:dependencyClasspath
+last *:update 
+plugins
+update
+plugins
+test 
+update 
+test 
+compile 
+testOnly WordCounterTest
+testOnly info.rewiring.spark.wc.WordCounterTest
+test 

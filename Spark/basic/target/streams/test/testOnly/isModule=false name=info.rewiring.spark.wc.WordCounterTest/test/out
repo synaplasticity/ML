@@ -1,0 +1,5 @@
+[0m[[0minfo[0m] [0m[32mWordCounterTest:[0m[0m
+[0m[[0minfo[0m] [0m[32mWord count test suite[0m[0m
+[0m[[0minfo[0m] [0m[32m  Basic internal step tests[0m[0m
+[0m[[0minfo[0m] [0m[31m  - should flatten the RDD and return a list of words *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    Array("A", "MIDSUMMER", "NIGHT", "S", "DREAM") did not equal Array("A", "MIDSUMMER", "NIGHT", "S", "DREAM") (WordCounterTest.scala:22)[0m[0m
