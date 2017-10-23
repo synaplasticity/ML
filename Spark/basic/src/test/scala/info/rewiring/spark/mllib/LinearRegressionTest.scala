@@ -15,7 +15,12 @@ class LinearRegressionTest extends FunSpec{
   val data = sc.textFile("file:///opt/spark/data/mllib/popvsrev/ex1data1.csv")
 
   val numOfIters = 50000
-  val learnRate = 0.099000000000009
+//  val learnRate = 0.17339
+//  val learnRate = 0.17339121
+//  val learnRate = 0.1733912059
+//  val learnRate = 0.173391205906 //19.54041891947169 (for 20) [-3.483043258547784,1.1511731089009738]
+//  val learnRate = 0.1733912059052 // 18.523431937340987 [-2.46748531945596,1.0495458628398473]
+  val learnRate = 0.1733912059055 // 18.446650711355087 [-2.391405318002467,1.0419028014678777]
 
   describe("Simple linear regression") {
 
