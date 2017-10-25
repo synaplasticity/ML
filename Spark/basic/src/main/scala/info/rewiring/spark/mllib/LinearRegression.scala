@@ -13,7 +13,7 @@ case class LinearRegression(data: RDD[String], numOfIter: Int, learnRate: Double
   def getData(): RDD[LabeledPoint] = {
 
     val parsedData = data.map { line =>
-      val rows : Array[String] = line.replace("\n", " ").split(" ")
+      val rows: Array[String] = line.replace("\n", " ").split(" ")
       val x: Array[String] = rows(0).split(",")
       LabeledPoint.parse(x(0) + ",1 " + x(1))
     }.cache()
@@ -23,7 +23,7 @@ case class LinearRegression(data: RDD[String], numOfIter: Int, learnRate: Double
   }
 
   def train(trainingData: RDD[LabeledPoint]): LinearRegressionModel = {
-//    LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate)
+    //    LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate)
     LinearRegressionWithSGD.train(trainingData, numOfIter, learnRate, 1.0, Vectors.dense(0.0, 0.0))
   }
 
@@ -34,7 +34,11 @@ case class LinearRegression(data: RDD[String], numOfIter: Int, learnRate: Double
       (point.label, prediction)
     }
 
-    val MSE = valuesAndPreds.map{ case(v, p) => math.pow((v - p), 2) }.mean()
-    println("training Mean Squared Error = " + MSE)  }
+    val MSE = valuesAndPreds.map { case (value, prediction) =>
+      math.pow((value - prediction), 2)
+    }
+      .mean()
+    println("training Mean Squared Error = " + MSE)
+  }
 
 }
