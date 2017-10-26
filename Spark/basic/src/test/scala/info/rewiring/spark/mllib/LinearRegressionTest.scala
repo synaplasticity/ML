@@ -26,7 +26,8 @@ class LinearRegressionTest extends FunSpec{
   //    val learnRate = 0.1733912059060034 // 19.453797089404848 (for 20) [-3.3972125248916543,1.142550480714825]
 //  val learnRate = 0.1733912059060035 // 19.323511349550316
 //  val learnRate = 0.17339120590600341 // 19.453797089404848 (for 20) [-3.3972125248916543,1.142550480714825]
-  val learnRate = 0.17339120590600343 // 18.462801655762526 [-2.4074087597060245,1.0435105207734274]
+//  val learnRate = 0.17339120590600343 // 18.462801655762526 [-2.4074087597060245,1.0435105207734274]
+  val learnRate = 0.1733912059060034176 //
 
   describe("Simple linear regression") {
 
@@ -56,9 +57,9 @@ class LinearRegressionTest extends FunSpec{
         println("Weights ------> " + model.weights)
         println("Intercept ------> " + model.intercept)
         linearRegression.evaluate(labeledPoint, model)
-        assert(model.predict(Vectors.dense(1, 20.0)) === 17.14723903437474)
-        assert(model.predict(Vectors.dense(1, 40.0)) === 34.29447806874948)
-        assert(model.predict(Vectors.dense(1, 50.0)) === 42.868097585936844)
+        assert(model.predict(Vectors.dense(1, 20.0)) === 19.453797089404848)
+        assert(model.predict(Vectors.dense(1, 40.0)) === 42.304806703701345)
+        assert(model.predict(Vectors.dense(1, 50.0)) === 53.730311510849596)
 
       }
 
