@@ -60,6 +60,7 @@ class LinearRegressionTest extends FunSpec{
         assert(model.predict(Vectors.dense(1, 20.0)) === 19.453797089404848)
         assert(model.predict(Vectors.dense(1, 40.0)) === 42.304806703701345)
         assert(model.predict(Vectors.dense(1, 50.0)) === 53.730311510849596)
+        assert(model.predict(Vectors.dense(1, 60.0)) === 65.15581631799785)
 
       }
 
