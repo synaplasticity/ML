@@ -1,0 +1,7 @@
+octave:315> newtheta 
+newtheta =
+
+  -3.63029143940436
+   1.16636235033558
+
+octave:316> diary off
