@@ -20,6 +20,20 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% cost function
+% J(θ)=1m⋅(−yTlog(h)−(1−y)Tlog(1−h))
+%
+exponent = -theta'*X';
+
+% y' is 1x100 vector.
+% "y' * log(sigmoid(exponent))'" - transpose the log bit so we have 100x1 vector. 
+%   (1-y)1 is 1x100 vector. So, "* log(1 - sigmoid(exponent))'" transpose 
+%   the log(1-sig..), so we get 100X1 vector
+
+J = 1/m * (-(y' * log(sigmoid(exponent))') - ((1 - y)' * log(1 - sigmoid(exponent))') );
+
+
+
 % first transpose X for sigmoid function, so we can multiply (1x3)*(3x100) = (1x100).
 % Transpose y (100X1) to (1x100) before. We will have a (1x100) vector (step 2)
 %
