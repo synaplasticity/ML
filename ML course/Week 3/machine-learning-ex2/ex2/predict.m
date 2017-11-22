@@ -16,9 +16,16 @@ p = zeros(m, 1);
 %
 
 
+% As theta' is (1x3) vector, transpose X to get (3x100) vector
+%   then transpose the final answer to get 100x1 vector, which is p
+%pred = zeros(m, 1);
+pred = sigmoid(theta' * X')';
 
-
-
+for i = 1:m
+    if (pred(i) >= 0.5)
+        p(i) = 1;
+    end
+end
 
 
 % =========================================================================
