@@ -1,4 +1,5 @@
 **/*.m~
 **/*.log
+**/*.mat
 Spark/basic/project/
 Spark/basic/target/
