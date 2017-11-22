@@ -1,3 +1,4 @@
 **/*.m~
+**/*.log
 Spark/basic/project/
 Spark/basic/target/
