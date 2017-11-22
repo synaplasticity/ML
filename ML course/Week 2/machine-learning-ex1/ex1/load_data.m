@@ -19,7 +19,7 @@
     fprintf('Creating training data expected value vector (y)... \n');
     y = data(:,2);
     
-    % theta - intial weights as 1 dimensial vector representing theta_0 and
+    % theta - intial weights as 1 dimensional vector representing theta_0 and
     % theta_1
     theta = zeros(2, 1);
     fprintf('Using initial weights (theta) as %d, %d : \n', theta);
