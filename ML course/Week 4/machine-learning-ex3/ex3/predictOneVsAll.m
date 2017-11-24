@@ -30,8 +30,9 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+[class, class_index] = max(sigmoid(X * all_theta'), [], 2);
 
-
+p = class_index;
 
 
 
