@@ -21,13 +21,23 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add bias (x0)
+X = [ones(m, 1) X];
+Theta1 = [ones(1, size(Theta1, 2)); Theta1];
 
+% iterate for training sample X size
+% input layer = image pixel 20*20 = 400 + 1 (x0). Vector 401x1, Theta1 = 26
+% (25 +1 (theta0))x401, Where 25 is the hidden layer unit size
+%
+% Output layer = 10X1 (One for each class) Find the max for each training
+% sample and set the probability to p.
+for i = 1:m
+    % Hidden layer
+    a_1 = sigmoid(Theta1 * X(i,:)');
 
-
-
-
-
-
+    % output layer
+    [class, p(i,:)] = max(sigmoid(Theta2 * a_1), [], 1);
+end
 
 % =========================================================================
 
