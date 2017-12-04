@@ -34,7 +34,8 @@ Theta1 = [ones(1, size(Theta1, 2)); Theta1];
 for i = 1:m
     % Hidden layer
     a_1 = sigmoid(Theta1 * X(i,:)');
-
+    
+    a_1(1) = 1; % (hidden layer zeroth unit) set a(2)(0) = 1 as bias unit.
     % output layer
     [class, p(i,:)] = max(sigmoid(Theta2 * a_1), [], 1);
 end

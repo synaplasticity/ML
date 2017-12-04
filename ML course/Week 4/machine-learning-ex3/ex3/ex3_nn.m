@@ -18,6 +18,8 @@
 
 %% Initialization
 clear ; close all; clc
+%% Add ex2 path, so we can reuse logistic regression functions
+addpath("../../../Week 3/machine-learning-ex2/ex2/")
 
 %% Setup the parameters you will use for this exercise
 input_layer_size  = 400;  % 20x20 Input Images of Digits
@@ -61,6 +63,8 @@ load('ex3weights.mat');
 %  you compute the training set accuracy.
 
 pred = predict(Theta1, Theta2, X);
+
+pred1 = pred;
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
