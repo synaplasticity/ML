@@ -96,7 +96,7 @@ for i = 1 : m
     classification_cost_sum = (-logisitic_y(i,:) * log(output_layer_activation))...
                                 - ((1 - logisitic_y(i, :)) * log(1 - output_layer_activation));
      
-    J = J + classification_cost_sum/m; % Sum for each training data
+    J = J + classification_cost_sum; % Sum for each training data
 
     % Calculate delta3 (output layer) (10x26) same as Theta2
     % transpose logisitic_y (from col to row), so we subtract
@@ -115,7 +115,7 @@ for i = 1 : m
 
 end
 
-%J = J * (1/m); % complete the cost formula by dividing by training data size
+J = J * (1/m); % complete the cost formula by dividing by training data size
 
 Theta1_grad = Theta1_grad / m;
 Theta2_grad = Theta2_grad / m;
