@@ -75,6 +75,7 @@ logisitic_y = [1:num_labels] == y;
 
 
 
+delta = delta2 = delta3 = 0;
 
 for i = 1 : m
     
@@ -82,11 +83,11 @@ for i = 1 : m
     %% Feedforward propagation
     %
     
-    % hidden layer
+    % hidden layer (26x1)
     a_1 = sigmoid(Theta1 * X(i,:)');
     a_1(1) = 1; % (hidden layer zeroth unit) set a(2)(0) = 1 as bias unit.
     
-    % output layer
+    % output layer (10x1)
     output_layer_activation = sigmoid(Theta2 * a_1);
     [p(i,:), class] = max(output_layer_activation, [], 1);
     
@@ -95,11 +96,29 @@ for i = 1 : m
     classification_cost_sum = (-logisitic_y(i,:) * log(output_layer_activation))...
                                 - ((1 - logisitic_y(i, :)) * log(1 - output_layer_activation));
      
-    J = J + classification_cost_sum; % Sum for each training data
+    J = J + classification_cost_sum/m; % Sum for each training data
+
+    % Calculate delta3 (output layer) (10x26) same as Theta2
+    % transpose logisitic_y (from col to row), so we subtract
+    % 10 length boolean logisitic representation of numbers from 
+    % 10 (k number of classes) output units
+    delta3_i = (output_layer_activation - logisitic_y(i, :)');
+    % + ((10x1) * (26x1))
+    Theta2_grad = Theta2_grad + (delta3_i * (a_1'));
+
+    % Calculate delta2 (Hidden layer). There is no delta1. (25x401) same
+    % as Theta1
+    %          (26x10 * 10x1)
+    delta2_i = (Theta2' * delta3_i) .* sigmoidGradient(Theta1 * X(i,:)'); % z = Theta*x and a = signmoid(z). a is the activation function.
+    delta2_i = delta2_i(2:end); % remove 0th delta element (25x1)
+    Theta1_grad = Theta1_grad + (delta2_i * X(i, :)); % (25x1).(1x401)
+
 end
 
-J = J * (1/m); % complete the cost formula by dividing by training data size
+%J = J * (1/m); % complete the cost formula by dividing by training data size
 
+Theta1_grad = Theta1_grad / m;
+Theta2_grad = Theta2_grad / m;
 
 % Add regularization term
 % NOTE: The bias unit is not included for regularization
@@ -107,7 +126,7 @@ J = J * (1/m); % complete the cost formula by dividing by training data size
 %   Theta2 is 10 X 26. We need to consider 10 x 25
 regularization_value = ( sum(sum(Theta1([2:size(Theta1, 1)], [2:size(Theta1, 2)]) .^ 2)) + ...
                              sum(sum(Theta2(:, [2:size(Theta2, 2)]) .^ 2)) ) * ...
-                                    (lambda / (2*m))
+                                    (lambda / (2*m));
 
 
 % Add it to the cost
