@@ -127,11 +127,18 @@ regularization_value = ( sum(sum(Theta1([2:end], [2:end]) .^ 2)) + ...
                                     (lambda / (2*m));
 
 
-% Add it to the cost
+theta1_regularization_value = ( Theta1(2:end, 2:end) ) * ...
+                                    (lambda / m);
+
+theta2_regularization_value = (
+                                Theta2(:, 2:end) ) * ...
+                                    (lambda / m);
+
+% Add it to the cost and gradients
 J = J + regularization_value;
 
-Theta1_grad = [Theta1_grad(:,1) Theta1_grad(:, 2:end) + regularization_value];
-Theta2_grad = [Theta2_grad(:,1) Theta2_grad(:, 2:end) + regularization_value];
+Theta1_grad = [Theta1_grad(:,1) Theta1_grad(:, 2:end) + theta1_regularization_value];
+Theta2_grad = [Theta2_grad(:,1) Theta2_grad(:, 2:end) + theta2_regularization_value];
 
 % -------------------------------------------------------------
 
