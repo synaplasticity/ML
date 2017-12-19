@@ -74,9 +74,6 @@ Theta1 = [ones(1, size(Theta1, 2)); Theta1]; % Add bias as the first row (1x401)
 logisitic_y = [1:num_labels] == y;
 
 
-
-delta = delta2 = delta3 = 0;
-
 for i = 1 : m
     
     %
@@ -120,18 +117,21 @@ J = J * (1/m); % complete the cost formula by dividing by training data size
 Theta1_grad = Theta1_grad / m;
 Theta2_grad = Theta2_grad / m;
 
+%printf('\n\n**************T1 and T2 grad size : %d and %d', size(Theta1_grad), size(Theta2_grad));
 % Add regularization term
 % NOTE: The bias unit is not included for regularization
 %   Theta1 is 26 X 401. We need to consider 25 X 401
 %   Theta2 is 10 X 26. We need to consider 10 x 25
-regularization_value = ( sum(sum(Theta1([2:size(Theta1, 1)], [2:size(Theta1, 2)]) .^ 2)) + ...
-                             sum(sum(Theta2(:, [2:size(Theta2, 2)]) .^ 2)) ) * ...
+regularization_value = ( sum(sum(Theta1([2:end], [2:end]) .^ 2)) + ...
+                             sum(sum(Theta2(:, [2:end]) .^ 2)) ) * ...
                                     (lambda / (2*m));
 
 
 % Add it to the cost
 J = J + regularization_value;
 
+Theta1_grad = [Theta1_grad(:,1) Theta1_grad(:, 2:end) + regularization_value];
+Theta2_grad = [Theta2_grad(:,1) Theta2_grad(:, 2:end) + regularization_value];
 
 % -------------------------------------------------------------
 
